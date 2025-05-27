@@ -1,9 +1,10 @@
-name: AIO App CI
+name: AIO App CI Stage
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch
 jobs:
   deploy:
     name: Deploy to Stage
