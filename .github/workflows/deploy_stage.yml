@@ -68,16 +68,18 @@ jobs:
             "https://adobeioruntime.net/api/v1/namespaces/35196-sandeepsupportapp-stage/packages"
 
       - name: Debug aio info
-        run: |
-          /usr/bin/sudo --preserve-env aio info
-          DEBUG=* aio app deploy --no-build -v
-          
-          
-            
-      - name: Deploy application (debug)
         env:
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
           AIO_RUNTIME_AUTH: ${{ secrets.AIO_RUNTIME_AUTH_STAGE }}
         run: |
-          /usr/bin/sudo --preserve-env aio app deploy -v
+          /usr/bin/sudo --preserve-env aio info
+          DEBUG=* /usr/bin/sudo --preserve-env aio app deploy --no-build -v
+          
+           
+      # - name: Deploy application (debug)
+       # env:
+          #AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
+          #AIO_RUNTIME_AUTH: ${{ secrets.AIO_RUNTIME_AUTH_STAGE }}
+        #run: |
+         # /usr/bin/sudo --preserve-env aio app deploy -v
 
