@@ -72,7 +72,7 @@ jobs:
           AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
           AIO_RUNTIME_AUTH: ${{ secrets.AIO_RUNTIME_AUTH_STAGE }}
         run: |
-          /usr/bin/sudo --preserve-env aio info
+         # /usr/bin/sudo --preserve-env aio info
           DEBUG=* /usr/bin/sudo --preserve-env aio app deploy --no-build -v
           
            
