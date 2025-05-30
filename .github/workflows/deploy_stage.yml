@@ -66,6 +66,10 @@ jobs:
           curl -v \
             -H "Authorization: Basic ${{ secrets.BASIC_AUTH }}" \
             "https://adobeioruntime.net/api/v1/namespaces/35196-sandeepsupportapp-stage/packages"
+
+      - name: Debug aio info
+        run: |
+          /usr/bin/sudo --preserve-env aio info
             
       - name: Deploy application (debug)
         env:
